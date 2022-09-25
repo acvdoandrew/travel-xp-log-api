@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const PublicationSchema = new Schema(
+const TravelSchema = new Schema(
   {
     id: { type: String, require: true },
     location: { type: String, require: true },
@@ -16,4 +16,4 @@ const PublicationSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model('Publication', PublicationSchema);
+module.exports = mongoose.model('Travel', TravelSchema);
