@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const cors = require('cors');
+const travel = require('./controllers/travel');
 
 // Initialize express app
 const app = express();
@@ -31,6 +32,8 @@ app.get('/', (req, res) => {
 });
 
 // mount router/controller
+
+app.use(travel);
 
 // App Listen
 app.listen(PORT, () => {

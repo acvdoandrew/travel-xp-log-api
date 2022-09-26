@@ -22,6 +22,15 @@ app.get('/api/travel', async (req, res) => {
   }
 });
 
+// Create Route
+app.post('/api/travel', async (req, res) => {
+  try {
+    res.status(201).json(await Travel.create(req.body));
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({ error: 'bad request' });
+  }
+});
 // New Route
 
 // Delete Route
@@ -48,15 +57,5 @@ app.put('/api/travel/:id', async (req, res) => {
   }
 });
 
-// Create Route
-app.post('/api/travel', async (req, res) => {
-  try {
-    res.status(201).json(await Travel.create(req.body));
-  } catch (error) {
-    console.log(error);
-    res.status(400).json({ error: 'bad request' });
-  }
-});
-
 // eslint-disable-next-line no-undef
-module.exports = travel;
+module.exports = app;
