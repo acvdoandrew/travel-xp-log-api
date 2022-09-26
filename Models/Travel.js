@@ -7,7 +7,7 @@ const TravelSchema = new Schema(
     location: { type: String, required: true },
     description: { type: String, required: true },
     image: { type: String },
-    cost: { type: Number, required: true },
+    cost: { type: String, required: true },
     visit: { type: String, required: true },
   },
   { timestamps: true }
