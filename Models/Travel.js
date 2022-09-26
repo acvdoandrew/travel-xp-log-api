@@ -4,14 +4,11 @@ const { Schema } = mongoose;
 
 const TravelSchema = new Schema(
   {
-    id: { type: String, require: true },
-    location: { type: String, require: true },
-    description: { type: String },
+    location: { type: String, required: true },
+    description: { type: String, required: true },
     image: { type: String },
-    cost: { type: Number, require: true },
-    visit: { type: String, require: true },
-    dateCreated: { default: Date.now(), require: true },
-    dateUpdated: { default: Date.now(), require: true },
+    cost: { type: Number, required: true },
+    visit: { type: String, required: true },
   },
   { timestamps: true }
 );

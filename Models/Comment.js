@@ -4,10 +4,7 @@ const { Schema } = mongoose;
 
 const CommentSchema = new Schema(
   {
-    id: { type: String, require: true },
-    comment: { type: String, require: true },
-    dateCreated: { default: Date.now(), require: true },
-    dateUpdated: { default: Date.now(), require: true },
+    comment: { type: String, required: true },
   },
   { timestamps: true }
 );
