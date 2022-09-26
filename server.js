@@ -3,7 +3,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const cors = require('cors');
-const travelRouter = require('./controllers/travel');
 
 // Initialize express app
 const app = express();
@@ -30,8 +29,6 @@ app.use(cors());
 app.get('/', (req, res) => {
   res.send('Welcome to Travel XP.Log');
 });
-
-app.use(travelRouter);
 
 // mount router/controller
 

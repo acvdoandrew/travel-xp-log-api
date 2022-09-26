@@ -1,18 +1,19 @@
 // controller dependencies
 const express = require('express');
 
-const router = express.Router();
-const Travel = require('../models/travel');
+const app = express();
+// eslint-disable-next-line import/no-unresolved, import/extensions, node/no-missing-require
+const Travel = require('../models/Travel');
 
 require('dotenv').config();
 
 // Root Route
-router.get('/', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Welcome to Travel XP.Log');
 });
 
 // Index Route
-router.get('/api/travel', async (req, res) => {
+app.get('/api/travel', async (req, res) => {
   try {
     res.status(200).json(await Travel.find({}));
   } catch (error) {
@@ -24,7 +25,7 @@ router.get('/api/travel', async (req, res) => {
 // New Route
 
 // Delete Route
-router.delete('/api/travel/:id', async (req, res) => {
+app.delete('/api/travel/:id', async (req, res) => {
   try {
     res.status(200).json(await Travel.findByIdAndDelete(req.params.id));
   } catch (error) {
@@ -34,7 +35,7 @@ router.delete('/api/travel/:id', async (req, res) => {
 });
 
 // Update Route
-router.put('/api/travel/:id', async (req, res) => {
+app.put('/api/travel/:id', async (req, res) => {
   try {
     res
       .status(200)
@@ -48,8 +49,7 @@ router.put('/api/travel/:id', async (req, res) => {
 });
 
 // Create Route
-// Create
-router.post('/api/travel', async (req, res) => {
+app.post('/api/travel', async (req, res) => {
   try {
     res.status(201).json(await Travel.create(req.body));
   } catch (error) {
@@ -58,4 +58,5 @@ router.post('/api/travel', async (req, res) => {
   }
 });
 
-module.exports = router;
+// eslint-disable-next-line no-undef
+module.exports = travel;
