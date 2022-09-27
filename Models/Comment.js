@@ -4,7 +4,8 @@ const { Schema } = mongoose;
 
 const CommentSchema = new Schema(
   {
-    comment: { type: String, required: true },
+    postId: { type: Schema.Types.ObjectId, ref: 'Travel' },
+    comment: { type: String, require: true },
   },
   { timestamps: true }
 );
