@@ -9,6 +9,8 @@ const TravelSchema = new Schema(
     image: { type: String },
     cost: { type: String, required: true },
     visit: { type: String, required: true },
+    userId: { type: String, required: true },
+    userName: { type: String, required: true },
   },
   { timestamps: true }
 );
