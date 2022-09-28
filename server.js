@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const cors = require('cors');
 const travel = require('./controllers/travel');
+const comment = require('./controllers/comments');
 
 // Initialize express app
 const app = express();
@@ -34,6 +35,7 @@ app.get('/', (req, res) => {
 // mount router/controller
 
 app.use(travel);
+app.use(comment);
 
 // App Listen
 app.listen(PORT, () => {
