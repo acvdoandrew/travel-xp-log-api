@@ -15,7 +15,7 @@ app.get('/api/comments', async (req, res) => {
 });
 
 // Create Route
-app.post('/api/travel/:id/comments', async (req, res) => {
+app.post('/api/comments', async (req, res) => {
   try {
     res.status(201).json(await Comment.create(req.body));
   } catch (error) {
