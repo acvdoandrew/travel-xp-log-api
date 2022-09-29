@@ -5,9 +5,9 @@ const app = express();
 const Comment = require('../models/Comment');
 
 // Index Route
-app.get('/api/comments', async (req, res) => {
+app.get('/api/comments/:pId', async (req, res) => {
   try {
-    res.status(200).json(await Comment.find({}));
+    res.status(200).json(await Comment.find({ postId: req.params.pId }));
   } catch (error) {
     console.log(error);
     res.status(400).json({ error: 'bad request' });
