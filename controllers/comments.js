@@ -1,8 +1,9 @@
+/* eslint-disable import/no-unresolved */
 // controller dependencies
 const express = require('express');
 
 const app = express();
-const Comment = require('../models/Comment');
+const Comment = require('../Models/Comment');
 
 // Index Route
 app.get('/api/comments/:pId', async (req, res) => {

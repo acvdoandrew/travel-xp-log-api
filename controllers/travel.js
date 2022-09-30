@@ -1,8 +1,9 @@
+/* eslint-disable node/no-missing-require */
 // controller dependencies
 const express = require('express');
 
 const app = express();
-const Travel = require('../models/Travel');
+const Travel = require('../Models/Travel');
 
 require('dotenv').config();
 
