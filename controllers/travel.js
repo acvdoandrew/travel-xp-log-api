@@ -2,7 +2,6 @@
 const express = require('express');
 
 const app = express();
-// eslint-disable-next-line import/no-unresolved, import/extensions, node/no-missing-require
 const Travel = require('../models/Travel');
 
 require('dotenv').config();
